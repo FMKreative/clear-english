@@ -55,7 +55,7 @@ Append a compact block after the transformed text. Include the parenthetical con
 
 ```text
 Readability
-- Flesch Reading Ease: 58.4 -> 71.2 (roughly fairly difficult to standard)
+- Flesch Reading Ease: 58.4 (fairly difficult) -> 71.2 (standard)
 - Average sentence length: 20.9 -> 15.1 words (long to moderate)
 ```
 

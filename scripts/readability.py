@@ -163,7 +163,7 @@ def format_human(result: dict[str, Any]) -> str:
 
     return "\n".join(
         [
-            f"Flesch Reading Ease (estimated; roughly {score_context}): {score}",
+            f"Flesch Reading Ease (estimated): {score} ({score_context})",
             f"Words counted: {result['scorable_words']}",
             f"Sentences: {result['sentences']}",
             f"Estimated syllables: {result['estimated_syllables']}",

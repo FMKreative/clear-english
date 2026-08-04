@@ -104,7 +104,7 @@ hidden words should not count
 
     def test_human_output_explains_the_main_metrics(self) -> None:
         output = format_human(analyse("Clear words help people understand useful ideas. " * 20))
-        self.assertIn("roughly", output)
+        self.assertIn("Flesch Reading Ease (estimated): 42.6 (difficult)", output)
         self.assertIn("Words counted:", output)
         self.assertNotIn("Scorable words:", output)
         self.assertIn("rough context:", output)
