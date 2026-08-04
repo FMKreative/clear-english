@@ -14,7 +14,7 @@ Transform supplied English without weakening its meaning or replacing its voice.
 3. **Record the invariants.** Preserve names, facts, dates, numbers, attribution, uncertainty, conditions, warnings, necessary terminology, intended meaning, and tone. In a summary, preserve every qualification needed to keep each retained claim accurate.
 4. **Transform the text.** Apply the editing principles below. A summary may omit detail, but must not distort a claim by removing its context or caveat. An explanation may make supported relationships explicit, but must not import new facts.
 5. **Check fidelity.** Compare the result with the source. Restore any lost qualification, scope, responsibility, sequence, or emotional character. Do not make a tentative claim certain or an opinion factual.
-6. **Measure after editing.** For substantial text, run the readability script after the language work is complete. Report the result; never revise merely to improve the score.
+6. **Measure after editing.** For substantial text, run the readability script after the language work is complete. Report the result with a brief, plain-language interpretation; never revise merely to improve the score.
 7. **Return the result first.** Do not describe the edits unless the user asks.
 
 ## Editing principles
@@ -40,21 +40,22 @@ If tone and simplification conflict, preserve the tone and improve only what can
 
 ## Readability
 
-Treat 100 scorable words as the threshold for a standard sample. Run `python3 scripts/readability.py <path>` from this skill directory, or send text through stdin. Use `--json` when structured output is useful.
+Treat 100 words counted by the script as the threshold for a standard sample. Run `python3 scripts/readability.py <path>` from this skill directory, or send text through stdin. Use `--json` when structured output is useful.
 
+- Add a readability note only for substantial text. Omit it for shorter text unless the user asks for it.
 - For a rewrite with substantial original and revised text, report both results.
 - For a substantial summary, explanation, or simplification without a comparable original, report the final result.
-- For shorter text, omit readability unless the user asks. Then label it as a short-sample estimate.
-- Call the result an estimate of surface difficulty, not a quality score.
-- Never use a score as proof of clarity, accuracy, coherence, or usefulness.
+- Call Flesch Reading Ease an estimate of surface difficulty, not a quality score. Never use it as proof of clarity, accuracy, coherence, or usefulness.
+- Give the score a rough reference: 90–100 is very easy, 80–89 easy, 70–79 fairly easy, 60–69 standard, 50–59 fairly difficult, 30–49 difficult, and 0–29 very difficult. These ranges are orientation, not targets, and can misrepresent technical or specialized writing.
+- Explain average sentence length with rough context: under 15 words is short, 15–20 moderate, 21–25 long, and over 25 very long. These are not universal rules or goals; genre and sentence structure matter.
+- Do not include “Scorable words” in the default reader-facing note. It means the number of ordinary English words included in the calculation after the script removes code, links, URLs, numbers, and symbols. If the count is useful for explaining a short sample or comparing two versions, call it “Words counted” and explain it briefly. It is not a quality measure.
 
-Append a compact block after the transformed text:
+Append a compact block after the transformed text. Include the parenthetical context so the numbers do not stand alone:
 
 ```text
 Readability
-- Flesch Reading Ease: 58.4 -> 71.2 (estimated)
-- Scorable words: 146 -> 121
-- Average sentence length: 20.9 -> 15.1 words
+- Flesch Reading Ease: 58.4 -> 71.2 (estimated; from fairly difficult to standard)
+- Average sentence length: 20.9 -> 15.1 words (both around moderate; rough context only)
 ```
 
 For one result, show one value instead of a comparison.

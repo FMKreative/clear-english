@@ -9,7 +9,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from readability import analyse, clean_text, extract_words, flesch_reading_ease
+from readability import analyse, clean_text, extract_words, flesch_reading_ease, format_human
 
 
 SCRIPT = Path(__file__).with_name("readability.py")
@@ -101,6 +101,13 @@ hidden words should not count
         )
         self.assertEqual(completed.returncode, 2)
         self.assertIn("No scorable English words", completed.stderr)
+
+    def test_human_output_explains_the_main_metrics(self) -> None:
+        output = format_human(analyse("Clear words help people understand useful ideas. " * 20))
+        self.assertIn("roughly", output)
+        self.assertIn("Words counted:", output)
+        self.assertNotIn("Scorable words:", output)
+        self.assertIn("rough context:", output)
 
 
 if __name__ == "__main__":

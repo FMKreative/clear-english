@@ -134,14 +134,40 @@ def read_input(path: str | None) -> str:
 
 def format_human(result: dict[str, Any]) -> str:
     confidence = result["confidence"]
-    confidence_note = "100+ scorable words" if confidence == "standard" else "fewer than 100 scorable words"
+    confidence_note = "100+ words counted" if confidence == "standard" else "fewer than 100 words counted"
+    score = result["flesch_reading_ease"]
+    if score >= 90:
+        score_context = "very easy"
+    elif score >= 80:
+        score_context = "easy"
+    elif score >= 70:
+        score_context = "fairly easy"
+    elif score >= 60:
+        score_context = "standard"
+    elif score >= 50:
+        score_context = "fairly difficult"
+    elif score >= 30:
+        score_context = "difficult"
+    else:
+        score_context = "very difficult"
+
+    sentence_length = result["average_sentence_length"]
+    if sentence_length < 15:
+        sentence_context = "short"
+    elif sentence_length <= 20:
+        sentence_context = "moderate"
+    elif sentence_length <= 25:
+        sentence_context = "long"
+    else:
+        sentence_context = "very long"
+
     return "\n".join(
         [
-            f"Flesch Reading Ease (estimated): {result['flesch_reading_ease']}",
-            f"Scorable words: {result['scorable_words']}",
+            f"Flesch Reading Ease (estimated; roughly {score_context}): {score}",
+            f"Words counted: {result['scorable_words']}",
             f"Sentences: {result['sentences']}",
             f"Estimated syllables: {result['estimated_syllables']}",
-            f"Average sentence length: {result['average_sentence_length']} words",
+            f"Average sentence length (rough context: {sentence_context}): {result['average_sentence_length']} words",
             f"Confidence: {confidence} ({confidence_note})",
         ]
     )
