@@ -2,6 +2,18 @@
 
 Use this reference when maintaining the skill or planning a later version. The operating rules belong in `SKILL.md`; do not load this file for routine transformations.
 
+## Versioning and releases
+
+Keep the skill name and folder stable as `clear-english`. Record the installed release in the root `VERSION` file and publish the same number as a Git tag and GitHub Release, prefixed with `v` (for example, `VERSION` contains `1.0.0` and the release tag is `v1.0.0`).
+
+Use semantic versioning for future changes:
+
+- Patch (`1.0.1`) for fixes that preserve the skill's intended behavior.
+- Minor (`1.1.0`) for backward-compatible capabilities or meaningful rule improvements.
+- Major (`2.0.0`) for changed defaults, boundaries, or output contracts that may surprise existing users.
+
+For each release, update `VERSION`, validate and test the skill, commit the change, create the matching tag, and summarize user-visible changes in the GitHub Release notes. GitHub Releases are the changelog; do not add a separate changelog file. Users can compare their local `VERSION` with the latest GitHub Release. A Git clone can also use `git describe --tags --always` and update with Git; a release archive should be replaced with a newer tagged archive.
+
 ## Writing sources
 
 ### George Orwell
