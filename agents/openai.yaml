@@ -1,0 +1,4 @@
+interface:
+  display_name: "Clear English"
+  short_description: "Simplify English without losing meaning"
+  default_prompt: "Use $clear-english to rewrite this text in clear, natural English while preserving its meaning and tone."
