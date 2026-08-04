@@ -10,7 +10,7 @@ Transform supplied English without weakening its meaning or replacing its voice.
 ## Workflow
 
 1. **Identify the operation.** Infer whether the user wants a rewrite, summary, explanation, or simplification. Follow any requested length, format, dialect, or audience. Otherwise write for a broad adult audience that includes non-native English speakers.
-2. **Set the source boundary.** Use only information the user supplies as source material. Do not add outside knowledge, invented examples, unsupported claims, or explanations that the source does not support. If the source lacks information needed to explain something, state the gap.
+2. **Set the source boundary.** Use only information the user supplies as source material. Do not add outside knowledge, invented examples, unsupported claims, or explanations that the source does not support. If the source does not answer part of the user's request, do not invent an answer. Answer what the source supports, and mention the limitation only when the unanswered part materially affects the request or would otherwise mislead the user.
 3. **Record the invariants.** Preserve names, facts, dates, numbers, attribution, uncertainty, conditions, warnings, necessary terminology, intended meaning, and tone. In a summary, preserve every qualification needed to keep each retained claim accurate.
 4. **Transform the text.** Apply the editing principles below. A summary may omit detail, but must not distort a claim by removing its context or caveat. An explanation may make supported relationships explicit, but must not import new facts.
 5. **Check fidelity.** Compare the result with the source. Restore any lost qualification, scope, responsibility, sequence, or emotional character. Do not make a tentative claim certain or an opinion factual.
@@ -45,17 +45,18 @@ Treat 100 words counted by the script as the threshold for a standard sample. Ru
 - Add a readability note only for substantial text. Omit it for shorter text unless the user asks for it.
 - For a rewrite with substantial original and revised text, report both results.
 - For a substantial summary, explanation, or simplification without a comparable original, report the final result.
-- Call Flesch Reading Ease an estimate of surface difficulty, not a quality score. Never use it as proof of clarity, accuracy, coherence, or usefulness.
+- Treat Flesch Reading Ease as a repeatable calculation for the script's counts and an estimate of surface difficulty, not a quality score. The word, sentence, and especially syllable counts are approximate. Never use the result as proof of clarity, accuracy, coherence, comprehension, or usefulness.
 - Give the score a rough reference: 90–100 is very easy, 80–89 easy, 70–79 fairly easy, 60–69 standard, 50–59 fairly difficult, 30–49 difficult, and 0–29 very difficult. These ranges are orientation, not targets, and can misrepresent technical or specialized writing.
-- Explain average sentence length with rough context: under 15 words is short, 15–20 moderate, 21–25 long, and over 25 very long. These are not universal rules or goals; genre and sentence structure matter.
+- Report average sentence length as the calculated words-per-sentence value for the supplied text, rounded to one decimal place. Add the broad labels short, moderate, long, or very long as descriptive orientation, not universal rules, goals, or quality judgments; genre and sentence structure matter.
+- Use the script for measurement, but format the final reader-facing note according to the concise template below rather than copying diagnostic labels verbatim.
 - Do not include “Scorable words” in the default reader-facing note. It means the number of ordinary English words included in the calculation after the script removes code, links, URLs, numbers, and symbols. If the count is useful for explaining a short sample or comparing two versions, call it “Words counted” and explain it briefly. It is not a quality measure.
 
 Append a compact block after the transformed text. Include the parenthetical context so the numbers do not stand alone:
 
 ```text
 Readability
-- Flesch Reading Ease: 58.4 -> 71.2 (estimated; from fairly difficult to standard)
-- Average sentence length: 20.9 -> 15.1 words (both around moderate; rough context only)
+- Flesch Reading Ease: 58.4 -> 71.2 (roughly fairly difficult to standard)
+- Average sentence length: 20.9 -> 15.1 words (long to moderate)
 ```
 
 For one result, show one value instead of a comparison.

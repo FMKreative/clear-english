@@ -70,7 +70,7 @@ These are accepted tradeoffs, not defects. They match the chosen version 1 behav
    - Revisit when consistent language is needed across unrelated AI responses. A separate platform-level instruction would be a different layer from this skill.
 2. **Flesch is an estimate of surface difficulty, not a quality score.**
    - Revisit if results prove too unstable or insufficient for non-native readers. Compare alternative diagnostics or reader testing before adding another score.
-3. **Strict source boundaries can make the skill report gaps instead of completing an explanation.**
-   - Revisit if explanations stop too often. Consider a clearly labeled, opt-in outside-context mode.
+3. **Strict source boundaries can limit an explanation without requiring a gap disclaimer.**
+   - The skill should answer supported parts directly and mention an omission only when it materially affects the request or would otherwise mislead the user. Revisit if explanations stop too often. Consider a clearly labeled, opt-in outside-context mode.
 4. **Tone preservation can limit how aggressively some text is simplified.**
    - Revisit if preserved style repeatedly blocks useful simplification. Consider explicit tone-versus-clarity modes.
