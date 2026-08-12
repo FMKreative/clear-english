@@ -36,6 +36,12 @@ Modern guidance: [Plain language guide series](https://digital.gov/guides/plain-
 
 Use its reader-centered practices: write for the actual audience, organize around what readers need, put the purpose and important information early, prefer familiar terms, uncover hidden verbs, and use active voice when it clarifies responsibility. Plain language must not mean writing for children unless children are the audience.
 
+### ASD-STE100 Simplified Technical English
+
+Primary source: [ASD-STE100 Simplified Technical English](https://www.asd-ste100.org/), Issue 9, 15 January 2025, rule 9.1.
+
+Adapt its instruction to recast a sentence when word-for-word replacement is insufficient or changes the meaning. Do not adopt or bundle the standard, its controlled vocabulary, hard sentence limits, or other compliance rules. Clear English applies to broader forms of writing and must preserve natural language, meaning, and tone.
+
 ## Readability sources
 
 ### Rudolf Flesch

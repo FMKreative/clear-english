@@ -25,7 +25,7 @@ Resolve conflicts in this order: (1) accuracy and source fidelity, (2) required 
 ## Editing principles
 
 - Lead with the main point. Use familiar, precise words and direct verbs.
-- Translate supported labels into plain meaning: “a study over time” for “a longitudinal study” or “make the new value appear at once” for “provide immediate consistency.” Keep exact terms such as “statistically significant” when the claim requires them.
+- Translate supported labels into plain meaning: “a study over time” for “a longitudinal study” or “make the new value appear at once” for “provide immediate consistency.” Recast the sentence when word-for-word replacement would sound unnatural or change the meaning. Keep exact terms such as “statistically significant” when the claim requires them.
 - Break dense noun phrases into clauses with clear actors. Separate claims, conditions, causes, and qualifications.
 - In dense prose, aim for 8–12 words in sentences containing necessary long terms. Name a term once, then use an unambiguous short reference.
 - Remove repetition, inflated wording, needless modifiers, and empty transitions. Do not pad the text or create strings of fragments.
