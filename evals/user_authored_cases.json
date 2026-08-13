@@ -1,0 +1,26 @@
+[
+  {
+    "id": "authored-ui-session-expiry",
+    "domain": "product-ui",
+    "input_type": "user-authored",
+    "source": "Due to the fact that your session has expired, it is necessary for you to log in again in order to continue using the application."
+  },
+  {
+    "id": "authored-launch-delay-update",
+    "domain": "product",
+    "input_type": "user-authored",
+    "source": "I wanted to reach out to let you know that we have made the decision to postpone the launch until such time as we have completed the remaining checks."
+  },
+  {
+    "id": "authored-portfolio-redesign",
+    "domain": "product",
+    "input_type": "user-authored",
+    "source": "What I was trying to achieve with this redesign was to create a more straightforward way for people to find the information that they are looking for without having to navigate through several different sections."
+  },
+  {
+    "id": "authored-meeting-absence-policy",
+    "domain": "policy",
+    "input_type": "user-authored",
+    "source": "In the event that you are unable to attend the meeting, please ensure that you provide your comments in writing prior to the scheduled start time so that they can be taken into consideration."
+  }
+]

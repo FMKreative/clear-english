@@ -50,4 +50,15 @@ Measure a text file with:
 python3 scripts/readability.py path/to/file.txt
 ```
 
+Measure the fixed rewritten-output baseline with:
+
+```bash
+python3 scripts/measure_baseline.py
+python3 scripts/measure_baseline.py --fail-under 65
+python3 scripts/measure_baseline.py --outputs evals/revised_outputs.json --fail-under 65
+python3 scripts/measure_baseline.py --outputs evals/fidelity_checked_outputs.json --fail-under 65
+```
+
+Review the non-quantitative guardrails in [`evals/quality-rubric.md`](evals/quality-rubric.md).
+
 See [`LICENSE`](LICENSE) for licensing information.

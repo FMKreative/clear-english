@@ -1,11 +1,11 @@
 ---
 name: clear-english
-description: Rewrite, summarize, explain, and simplify existing English source text so it is clear, direct, natural, and easier for broad or non-native adult audiences to understand while preserving meaning, facts, uncertainty, necessary detail, and tone. Use when a user asks to clarify their writing, remove fluff or AI-like language, produce a faithful plain-English summary, explain a difficult supplied passage, or simplify source material without adding outside knowledge.
+description: Rewrite, summarize, explain, and simplify existing user-authored or user-provided English so it is clear, direct, natural, and easier for broad or non-native adult audiences to understand while preserving meaning, facts, uncertainty, necessary detail, and tone. Use when a user asks to clarify their writing, remove fluff or AI-like language, produce a faithful plain-English summary, explain a difficult passage, or simplify existing text without adding outside knowledge.
 ---
 
 # Clear English
 
-Transform supplied English without weakening its meaning or replacing its voice. Treat clarity as a reader outcome, not a demand for uniformly short prose.
+Transform existing user-authored or user-provided English without weakening its meaning or replacing its voice. Treat clarity as a reader outcome, not a demand for uniformly short prose.
 
 ## Priorities
 
@@ -15,11 +15,11 @@ Resolve conflicts in this order: (1) accuracy and source fidelity, (2) required 
 
 1. **Identify the operation.** Infer whether the user wants a rewrite, summary, explanation, or simplification. Follow requested constraints. Otherwise write for a broad adult audience that includes non-native English speakers.
 2. **Set the target silently.** For substantial text, require at least 60, prefer 60–89, and aim near 80 to leave room for the formula's estimate. Accept scores above 89. Replace the default with any explicit target: treat “score 70” or “around 70” as 65–75, “at least 70” as 70 or higher, and a stated range as bounded at both ends. Never ask the user to choose or confirm a score.
-3. **Set boundaries.** Use only supplied source material. Preserve names, facts, numbers, attribution, uncertainty, conditions, warnings, meaning, and tone. Fidelity protects meaning, not wording or academic register. Do not add outside knowledge or unsupported claims. Mention a source gap only when silence would mislead.
-4. **Plan plain wording.** Before drafting, replace each long or abstract phrase that has a shorter accurate equivalent. Keep a specialized term only when the user requires it or replacement would lose meaning. A term is not required merely because the source uses it.
+3. **Set boundaries.** Use only the text and context the user provides. Preserve names, facts, numbers, attribution, uncertainty, conditions, warnings, meaning, and tone. Fidelity protects meaning, not wording or academic register. Do not add outside knowledge or unsupported claims. Mention a source gap only when silence would mislead.
+4. **Plan plain wording.** Before drafting, replace each long or abstract phrase that has a shorter accurate equivalent. Keep a specialized term only when the user requires it or replacement would lose meaning. A term is not required merely because the source uses it. When a necessary term is long or technical, simplify the surrounding sentence instead of replacing the term only to improve the score.
 5. **Draft once.** Apply the principles below in one language pass. Summaries may omit detail but must keep the context and caveats needed for each claim. Explanations may make supported relationships explicit but may not import facts.
-6. **Check fidelity before scoring.** Restore lost scope, responsibility, sequence, qualifications, or emotional character within the same pass. Keep tentative claims tentative and opinions identifiable as opinions.
-7. **Measure once.** Score only the final text after the fidelity check. Score the original only when the user requests a comparison. Never generate or revise another version after seeing the score.
+6. **Check reader effort and fidelity before scoring.** Make the main point easy to find. Keep actors close to their actions, limit each sentence to one main claim when possible, and separate claims from causes, conditions, exceptions, warnings, and next steps. For procedural text, make the responsible actor and action explicit. For academic or explanatory text, separate the finding, its limits, and its implication. For product or UI text, lead with the action or outcome the source supports. Restore lost scope, responsibility, sequence, qualifications, or emotional character within the same pass. Keep tentative claims tentative and opinions identifiable as opinions.
+7. **Measure once.** Score only the final text after the reader-effort and fidelity check. Score the original only when the user requests a comparison. Never generate or revise another version after seeing the score.
 8. **Return the result first.** On a miss, return the best faithful version, actual score, and one brief note. Do not retry, ask what to do, or describe edits unless requested.
 
 ## Editing principles
@@ -28,13 +28,14 @@ Resolve conflicts in this order: (1) accuracy and source fidelity, (2) required 
 - Translate supported labels into plain meaning: “a study over time” for “a longitudinal study” or “make the new value appear at once” for “provide immediate consistency.” Recast the sentence when word-for-word replacement would sound unnatural or change the meaning. Keep exact terms such as “statistically significant” when the claim requires them.
 - Break dense noun phrases into clauses with clear actors. Separate claims, conditions, causes, and qualifications.
 - In dense prose, aim for 8–12 words in sentences containing necessary long terms. Name a term once, then use an unambiguous short reference.
+- Reduce avoidable reading effort across domains: put the purpose or main point early, keep related ideas together, and use short paragraphs or lists when they clarify the source’s structure.
 - Remove repetition, inflated wording, needless modifiers, and empty transitions. Do not pad the text or create strings of fragments.
 - Prefer active voice when the actor matters. Use short paragraphs or headings when they help.
 - Break any mechanical rule when accuracy, tone, or natural English requires it. Avoid childish language and do not force an optimistic tone.
 
 ## Tone
 
-Preserve personality, formality, stance, and emotional character. Simplify within that voice; if tone and simplification conflict, preserve tone.
+Preserve personality, formality, stance, and emotional character. For a user-authored draft, improve awkward wording without making the writer sound generic. Simplify within that voice; if tone and simplification conflict, preserve tone.
 
 ## Readability
 
